@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap");@import url("https://fonts.googleapis.com/css?family=Teko:300,400,500,600,700&display=swap");@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");@font-face {
+  font-family: "Helvetica Neue";
+  src: url("../../fonts/helvetica_neue/HelveticaNeue-Light.eot");
+  src: url("../../fonts/helvetica_neue/HelveticaNeue-Light-.eot#iefix") format("embedded-opentype"), url("../../fonts/helvetica_neue/HelveticaNeue-Light.woff2") format("woff2"), url("../../fonts/helvetica_neue/HelveticaNeue-Light.woff") format("woff"), url("../../fonts/helvetica_neue/HelveticaNeue-Light.ttf") format("truetype"), url("../../fonts/helvetica_neue/HelveticaNeue-Light.svg#HelveticaNeue-Light") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("../../fonts/helvetica_neue/HelveticaNeue-Medium.eot");
+  src: url("../../fonts/helvetica_neue/HelveticaNeue-Medium-.eot#iefix") format("embedded-opentype"), url("../../fonts/helvetica_neue/HelveticaNeue-Medium.woff2") format("woff2"), url("../../fonts/helvetica_neue/HelveticaNeue-Medium.woff") format("woff"), url("../../fonts/helvetica_neue/HelveticaNeue-Medium.ttf") format("truetype"), url("../../fonts/helvetica_neue/HelveticaNeue-Medium.svg#HelveticaNeue-Medium") format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("../../fonts/helvetica_neue/HelveticaNeue-Bold.eot");
+  src: url("../../fonts/helvetica_neue/HelveticaNeue-Bold-.eot#iefix") format("embedded-opentype"), url("../../fonts/helvetica_neue/HelveticaNeue-Bold.woff2") format("woff2"), url("../../fonts/helvetica_neue/HelveticaNeue-Bold.woff") format("woff"), url("../../fonts/helvetica_neue/HelveticaNeue-Bold.ttf") format("truetype"), url("../../fonts/helvetica_neue/HelveticaNeue-Bold.svg#HelveticaNeue-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+.nosotros .portada {
+  min-height: 400px;
+  max-height: 425px;
+  height: 90vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+}
+
+.nosotros .portada h2 {
+  font-weight: bold;
+  line-height: 1.04;
+}
+
+.nosotros .portada h2 span {
+  font-weight: 300;
+}
+
+@media screen and (min-width: 768px) {
+  .nosotros .portada h2 {
+    font-size: 45px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .nosotros .portada h2 {
+    font-size: 50px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nosotros .portada {
+    max-height: 600px;
+  }
+}
+
+.nosotros .informacion {
+  padding: 40px 0px;
+}
+
+.nosotros .informacion h2 {
+  font-weight: bold;
+  line-height: 1.04;
+  letter-spacing: 1.94px;
+}
+
+@media screen and (min-width: 992px) {
+  .nosotros .informacion h2 {
+    font-size: 55px;
+    width: 466px;
+    margin-left: 0px;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .nosotros .informacion h2 {
+    font-size: 32px;
+    width: 570px;
+  }
+}
+
+.nosotros .informacion p {
+  font-family: "Roboto";
+  font-size: 16px;
+  line-height: 1.36;
+  color: #3f3f3f;
+}
+
+@media screen and (min-width: 992px) {
+  .nosotros .informacion p {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .nosotros .informacion p {
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .nosotros .informacion {
+    padding: 60px 0px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .nosotros .informacion {
+    padding: 80px 0px;
+  }
+}
+
+.nosotros .informacion--2 {
+  background-color: #000;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: auto;
+  padding: 40px 0px;
+}
+
+.nosotros .informacion--2 h3 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.21;
+  color: #fff;
+}
+
+@media screen and (min-width: 992px) {
+  .nosotros .informacion--2 h3 {
+    font-size: 35px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .nosotros .informacion--2 h3 {
+    font-size: 32px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .nosotros .informacion--2 {
+    padding: 60px 0px;
+  }
+}
+
+.nosotros .mision-vision {
+  background-color: #3a8433;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: auto;
+  background-blend-mode: multiply;
+  padding: 40px 0px;
+}
+
+.nosotros .mision-vision h3 {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  font-size: 30px;
+  font-weight: bold;
+  color: #2f2c2c;
+}
+
+@media screen and (min-width: 992px) {
+  .nosotros .mision-vision h3 {
+    font-size: 40px;
+  }
+}
+
+.nosotros .mision-vision p {
+  font-family: "Roboto";
+  font-size: 14px;
+  line-height: 1.53;
+  color: #2f2c2c;
+}
+
+@media screen and (min-width: 992px) {
+  .nosotros .mision-vision p {
+    font-size: 17px;
+  }
+}
+
+.nosotros .mision-vision .card {
+  background-color: #000;
+  border-radius: 0px;
+  border: none;
+}
+
+.nosotros .mision-vision .card h2,
+.nosotros .mision-vision .card h4,
+.nosotros .mision-vision .card p {
+  color: #fff;
+}
+
+.nosotros .mision-vision .card h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+}
+
+@media screen and (min-width: 992px) {
+  .nosotros .mision-vision .card h2 {
+    font-size: 35px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .nosotros .mision-vision .card h2 {
+    font-size: 40px;
+  }
+}
+
+.nosotros .mision-vision .card h4 {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.25;
+}
+
+@media screen and (min-width: 768px) {
+  .nosotros .mision-vision .card h4 {
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .nosotros .mision-vision .card h4 {
+    font-size: 26px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .nosotros .mision-vision .card h4 {
+    font-size: 28px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .nosotros .mision-vision .card h4 {
+    font-size: 29px;
+  }
+}
+
+.nosotros .mision-vision .card img.direccion {
+  max-width: 280px;
+}
+
+@media screen and (min-width: 992px) {
+  .nosotros .mision-vision .card img.direccion {
+    max-width: 520px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .nosotros .mision-vision .card img.mapa {
+    max-width: 405px;
+    margin-bottom: 90px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .nosotros .mision-vision .card img.mapa {
+    margin-bottom: 100px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nosotros .mision-vision .card {
+    margin-top: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .nosotros .mision-vision .card {
+    padding: 30px 60px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .nosotros .mision-vision {
+    padding: 60px 0px;
+  }
+}
+

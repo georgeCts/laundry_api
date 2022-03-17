@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap");@import url("https://fonts.googleapis.com/css?family=Teko:300,400,500,600,700&display=swap");@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");@font-face {
+  font-family: "Helvetica Neue";
+  src: url("../../fonts/helvetica_neue/HelveticaNeue-Light.eot");
+  src: url("../../fonts/helvetica_neue/HelveticaNeue-Light-.eot#iefix") format("embedded-opentype"), url("../../fonts/helvetica_neue/HelveticaNeue-Light.woff2") format("woff2"), url("../../fonts/helvetica_neue/HelveticaNeue-Light.woff") format("woff"), url("../../fonts/helvetica_neue/HelveticaNeue-Light.ttf") format("truetype"), url("../../fonts/helvetica_neue/HelveticaNeue-Light.svg#HelveticaNeue-Light") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("../../fonts/helvetica_neue/HelveticaNeue-Medium.eot");
+  src: url("../../fonts/helvetica_neue/HelveticaNeue-Medium-.eot#iefix") format("embedded-opentype"), url("../../fonts/helvetica_neue/HelveticaNeue-Medium.woff2") format("woff2"), url("../../fonts/helvetica_neue/HelveticaNeue-Medium.woff") format("woff"), url("../../fonts/helvetica_neue/HelveticaNeue-Medium.ttf") format("truetype"), url("../../fonts/helvetica_neue/HelveticaNeue-Medium.svg#HelveticaNeue-Medium") format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("../../fonts/helvetica_neue/HelveticaNeue-Bold.eot");
+  src: url("../../fonts/helvetica_neue/HelveticaNeue-Bold-.eot#iefix") format("embedded-opentype"), url("../../fonts/helvetica_neue/HelveticaNeue-Bold.woff2") format("woff2"), url("../../fonts/helvetica_neue/HelveticaNeue-Bold.woff") format("woff"), url("../../fonts/helvetica_neue/HelveticaNeue-Bold.ttf") format("truetype"), url("../../fonts/helvetica_neue/HelveticaNeue-Bold.svg#HelveticaNeue-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+.marcas .portada {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 60px 0px;
+  background-color: #252525;
+  background-blend-mode: overlay;
+}
+
+.marcas .portada h1 {
+  color: #3a8433;
+}
+
+@media screen and (min-width: 768px) {
+  .marcas .portada h1 {
+    font-size: 55px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .marcas .portada h1 {
+    font-size: 65px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .marcas .portada h1 {
+    font-size: 70px;
+  }
+}
+
+.marcas .portada h3 {
+  color: #fff;
+  line-height: 1.1;
+  letter-spacing: 1.71px;
+}
+
+@media screen and (min-width: 768px) {
+  .marcas .portada h3 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .marcas .portada {
+    padding: 80px 0px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .marcas .portada {
+    padding: 100px 0px;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.marcas .link-tienda-online {
+  overflow: hidden;
+  background-image: url("../../images/bg-link-tienda-online.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.marcas .link-tienda-online a {
+  font-family: "Oswald";
+  font-weight: 600;
+  line-height: 1.09;
+  color: #252525;
+  padding: 14px 0px;
+  font-size: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .marcas .link-tienda-online a {
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .marcas .link-tienda-online a {
+    padding: 20px 0px;
+  }
+}
+
+.marcas .link-tienda-online .trapecio-top {
+  position: relative;
+  z-index: 1;
+}
+
+.marcas .link-tienda-online .trapecio-top::before {
+  content: "";
+  width: 100%;
+  height: 0px;
+  border-right: 60px solid transparent;
+  border-left: 60px solid transparent;
+  border-top: 100px solid #3a8433;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+}
+
+.marcas .listado-marcas {
+  padding: 40px 0px;
+}
+
+.marcas .listado-marcas .card-image {
+  width: 100%;
+  max-width: 290px;
+  height: 155px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fafafa;
+}
+
+.marcas .listado-marcas .card-image img {
+  width: auto;
+}
+

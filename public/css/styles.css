@@ -1,0 +1,231 @@
+@font-face {
+    font-family: harvestital;
+    src: url('/fonts/harvestitalregular.ttf');
+}
+
+nav.top {
+    background: url('/images/cintillo-superior-fijo/01-cintillo.png') !important;
+    background-repeat: no-repeat;
+    height: 38px;
+}
+
+/*
+* CINTILLO SUPERIOR FIJO 
+*/
+.cintillo-social-icons {
+    width: 30px;
+    height: 30px;
+}
+
+.cintillo-text {
+    font-family: harvestital;
+    color: black;
+}
+
+/*
+*   ENCABEZADO
+*/
+div.encabezado {
+    background: url('/images/encabezado/010-fondo-transparencia.png') !important;
+    background-repeat: no-repeat;
+    height: 106px;
+}
+
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+   /*  height: 2.75rem; */
+    overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: 38px;
+    overflow-x: auto;
+    color: rgba(255, 255, 255, .75);
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.encabezado-logo {
+    height: 58px;
+    margin-top: 6px;
+    padding-left: 105px;
+}
+
+.encabezado-slogan {
+    width: 25%;
+    height: 68%;
+    margin-top: 10px;
+    padding-left: 90px;
+    margin-left: 200px;
+}
+
+.encabezado-icons-container {
+    padding-right: 10px;
+    margin-top: 25px;
+}
+
+.encabezado-icons {
+    width: 30px;
+    height: 30px;
+    margin: 0px 4px;
+}
+
+/*
+*   MENU
+*/
+div.menu {
+    background: url('/images/encabezado/011-menu-flotante.png') !important;
+    background-repeat: no-repeat;
+    margin: 20px auto;
+    height: 58px;
+    width: 60%;
+    z-index: 99;
+    position: relative;
+}
+
+div.menu .menu-items {
+    padding-top: 17px !important;
+}
+
+div.menu .menu-items ul li {
+    font-family: harvestital;
+    font-size: 18px;
+    margin: 0px 7px;
+    color: white;
+}
+
+div.menu .menu-items ul li:hover {
+    font-size: 20px;
+    text-decoration: underline;
+    color: #18FD00;
+}
+
+/*
+*   SLIDERS
+*/
+.content-slider {
+    z-index: -9;
+    margin-top: -170px;
+    position: relative;
+}
+
+.slider.cintillo-blanco {
+    font-family: harvestital;
+    color: black;
+    font-size: 44px;
+}
+
+.slider.cintillo-negro {
+    font-family: Arial;
+    font-weight: bold;
+    text-decoration: underline;
+    color: #18FD00;
+    font-size: 24px;
+}
+
+/*
+*   BANNER CONTACTANOS
+*/
+div.banner-contacto {
+    background: url('/images/banner-contacto/021-fondo-banner.png') !important;
+    background-repeat: no-repeat;
+    height: 406px;
+}
+
+span.contacto-titulo {
+    font-family: harvestital;
+    font-size: 55px;
+    color: white;
+    text-align: center !important;
+}
+
+p.contacto-subtitulo {
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    padding: 0px 250px;
+}
+
+/*
+*   BANNER BIENVENIDO
+*/
+div.banner-bienvenido {
+    background-color: white;
+    padding: 30px 60px;
+}
+
+img.caja-texto {
+    width: 75%;
+    right: 150px;
+    position: absolute;
+    margin-top: 80px;
+}
+
+span.bienvenido-titulo {
+    font-family: harvestital;
+    font-size: 50px;
+    color: black;
+    text-align: center !important;
+}
+
+p.bienvenido-descripcion {
+    font-family: Arial;
+    font-size: 19px;
+    font-weight: bold;
+    color: black;
+    text-align: center !important;
+}
+
+/*
+*   BANNER BIENVENIDO
+*/
+div.banner-productos {
+    background: url('/images/banner-productos/033-fondo.png') !important;
+    background-repeat: no-repeat;
+    height: 2272px;
+}
+
+span.banner-productos-title {
+    font-family: harvestital;
+    font-size: 95px;
+    color: white;
+    text-align: center !important;
+    padding-left: 20px;
+}
+
+div.productos-container {
+    background: url('/images/banner-productos/034-fondo-slider.png') !important;
+    height: 486px;
+}
+
+div.slider-productos {
+    margin: 60px auto;
+    width: 90%;
+}
+
+div.producto-item {
+    width: 450px !important;
+    margin: 0px 20px;
+    margin-top: 50px;
+}
+
+img.producto-image {
+    width: inherit;
+}
+
+.slick-prev:before, .slick-next:before {
+    font-size: 50px !important;
+    opacity: 1 !important;
+}
+
+.slick-prev {
+    left: -55px !important;
+}

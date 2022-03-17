@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap");@import url("https://fonts.googleapis.com/css?family=Teko:300,400,500,600,700&display=swap");@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");@font-face {
+  font-family: "Helvetica Neue";
+  src: url("../../fonts/helvetica_neue/HelveticaNeue-Light.eot");
+  src: url("../../fonts/helvetica_neue/HelveticaNeue-Light-.eot#iefix") format("embedded-opentype"), url("../../fonts/helvetica_neue/HelveticaNeue-Light.woff2") format("woff2"), url("../../fonts/helvetica_neue/HelveticaNeue-Light.woff") format("woff"), url("../../fonts/helvetica_neue/HelveticaNeue-Light.ttf") format("truetype"), url("../../fonts/helvetica_neue/HelveticaNeue-Light.svg#HelveticaNeue-Light") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("../../fonts/helvetica_neue/HelveticaNeue-Medium.eot");
+  src: url("../../fonts/helvetica_neue/HelveticaNeue-Medium-.eot#iefix") format("embedded-opentype"), url("../../fonts/helvetica_neue/HelveticaNeue-Medium.woff2") format("woff2"), url("../../fonts/helvetica_neue/HelveticaNeue-Medium.woff") format("woff"), url("../../fonts/helvetica_neue/HelveticaNeue-Medium.ttf") format("truetype"), url("../../fonts/helvetica_neue/HelveticaNeue-Medium.svg#HelveticaNeue-Medium") format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("../../fonts/helvetica_neue/HelveticaNeue-Bold.eot");
+  src: url("../../fonts/helvetica_neue/HelveticaNeue-Bold-.eot#iefix") format("embedded-opentype"), url("../../fonts/helvetica_neue/HelveticaNeue-Bold.woff2") format("woff2"), url("../../fonts/helvetica_neue/HelveticaNeue-Bold.woff") format("woff"), url("../../fonts/helvetica_neue/HelveticaNeue-Bold.ttf") format("truetype"), url("../../fonts/helvetica_neue/HelveticaNeue-Bold.svg#HelveticaNeue-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+.bolsa-trabajo .portada {
+  padding: 40px 0px;
+  background-color: #3a8433;
+}
+
+.bolsa-trabajo .portada h3 {
+  letter-spacing: 0.11px;
+  font-weight: 900;
+  color: #FFF;
+}
+
+@media screen and (min-width: 768px) {
+  .bolsa-trabajo .portada h3 {
+    font-size: 35px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .bolsa-trabajo .portada h3 {
+    font-size: 40px;
+  }
+}
+
+.bolsa-trabajo .listado .btn {
+  width: 100%;
+  max-width: 225px;
+  border: none;
+  border-radius: 0px;
+  font-family: "Teko";
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: #252525;
+  color: #FFF;
+  padding-bottom: 3px;
+}
+
+.bolsa-trabajo .listado .bg-contain {
+  padding: 40px 0px;
+}
+
+.bolsa-trabajo .listado .bg-contain h3 {
+  letter-spacing: 0.11px;
+  font-weight: 900;
+}
+
+@media screen and (min-width: 768px) {
+  .bolsa-trabajo .listado .bg-contain h3 {
+    font-size: 28px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .bolsa-trabajo .listado .bg-contain h3 {
+    font-size: 32px;
+  }
+}
+
+.bolsa-trabajo .listado .bg-contain + .bg-contain {
+  border-top: 8px solid #3a8433;
+}
+
+@media screen and (min-width: 992px) {
+  .bolsa-trabajo .listado .bg-contain + .bg-contain {
+    border-width: 15px;
+  }
+}
+
+.bolsa-trabajo .listado .bg-contain .descripciones * {
+  font-family: "Roboto";
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media screen and (min-width: 992px) {
+  .bolsa-trabajo .listado .bg-contain .descripciones * {
+    font-size: 16px;
+  }
+}
+
+.bolsa-trabajo .listado .bg-contain:nth-child(odd) {
+  background-image: url("/images/bg-reclutamiento03.png");
+  background-color: #fff;
+}
+
+.bolsa-trabajo .listado .bg-contain:nth-child(even) {
+  background-color: #252525;
+  /* background-image: url("/images/bg-bolsa-trabajo.png"); */
+  background-position: center;
+  background-repeat: repeat-x;
+  background-size: auto;
+}
+
+.bolsa-trabajo .listado .bg-contain:nth-child(even) h3 {
+  color: #fff;
+}
+
+.bolsa-trabajo .listado .bg-contain:nth-child(even) .descripciones p {
+  color: #fff;
+}
+
+.bolsa-trabajo .listado .bg-contain:nth-child(even) .btn {
+  background-color: #3a8433;
+  color: #FFF;
+}
+
+@media screen and (min-width: 768px) {
+  .bolsa-trabajo .listado .bg-contain {
+    padding: 50px 0px;
+  }
+}
+
+.bolsa-trabajo .bg-amarillo {
+  background-color: #3a8433;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: auto;
+  padding: 40px 0px;
+  position: relative;
+}
+
+.bolsa-trabajo .bg-amarillo .formulario h3 {
+  font-weight: bold;
+  letter-spacing: 0.11px;
+}
+
+@media screen and (min-width: 768px) {
+  .bolsa-trabajo .bg-amarillo .formulario h3 {
+    font-size: 35px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .bolsa-trabajo .bg-amarillo .formulario h3 {
+    font-size: 40px;
+  }
+}
+
+.bolsa-trabajo .bg-amarillo .formulario input {
+  width: 100%;
+  background-color: #fff;
+  border: none;
+  box-shadow: none !important;
+  outline: none !important;
+  font-family: "Roboto";
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  color: #adadad;
+  padding: 6px 15px;
+}
+
+.bolsa-trabajo .bg-amarillo .formulario input::-webkit-input-placeholder {
+  color: #adadad;
+}
+
+.bolsa-trabajo .bg-amarillo .formulario input::-moz-placeholder {
+  color: #adadad;
+}
+
+.bolsa-trabajo .bg-amarillo .formulario input:-ms-input-placeholder {
+  color: #adadad;
+}
+
+.bolsa-trabajo .bg-amarillo .formulario input::-ms-input-placeholder {
+  color: #adadad;
+}
+
+.bolsa-trabajo .bg-amarillo .formulario input::placeholder {
+  color: #adadad;
+}
+
+.bolsa-trabajo .bg-amarillo .formulario input + input {
+  margin-top: 15px;
+}
+
+.bolsa-trabajo .bg-amarillo .formulario textarea {
+  width: 100%;
+  background-color: #fff;
+  border: none;
+  box-shadow: none !important;
+  outline: none !important;
+  font-family: "Roboto";
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  color: #adadad;
+  padding: 6px 15px;
+  resize: none;
+}
+
+.bolsa-trabajo .bg-amarillo .formulario textarea::-webkit-input-placeholder {
+  color: #adadad;
+}
+
+.bolsa-trabajo .bg-amarillo .formulario textarea::-moz-placeholder {
+  color: #adadad;
+}
+
+.bolsa-trabajo .bg-amarillo .formulario textarea:-ms-input-placeholder {
+  color: #adadad;
+}
+
+.bolsa-trabajo .bg-amarillo .formulario textarea::-ms-input-placeholder {
+  color: #adadad;
+}
+
+.bolsa-trabajo .bg-amarillo .formulario textarea::placeholder {
+  color: #adadad;
+}
+
+.bolsa-trabajo .bg-amarillo .formulario p {
+  font-family: "Roboto";
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.bolsa-trabajo .bg-amarillo .formulario .btn {
+  padding: 7px 15px;
+  min-width: 136px;
+  width: 100%;
+  border-radius: 0px;
+  font-size: 16px;
+  font-family: "Teko";
+  text-transform: uppercase;
+  outline: none !important;
+  box-shadow: none !important;
+  padding-bottom: 3px;
+}
+
+.bolsa-trabajo .bg-amarillo .formulario .btn.btn-blanco {
+  border: 2px solid #fff;
+  background-color: transparent;
+  color: #fff;
+}
+
+.bolsa-trabajo .bg-amarillo .formulario .btn.btn-amarillo {
+  border: 2px solid #3a8433;
+  background-color: #3a8433;
+  color: #FFF;
+}
+
+.bolsa-trabajo .bg-amarillo .formulario .btn.btn-negro {
+  border: 2px solid #000;
+  background-color: #000;
+  color: #3a8433;
+}
+
+@media screen and (min-width: 768px) {
+  .bolsa-trabajo .bg-amarillo .formulario .btn {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .bolsa-trabajo .bg-amarillo .formulario .btn {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .bolsa-trabajo .bg-amarillo {
+    padding: 60px 0px;
+  }
+}
+

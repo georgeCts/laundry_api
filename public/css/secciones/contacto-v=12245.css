@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap");@import url("https://fonts.googleapis.com/css?family=Teko:300,400,500,600,700&display=swap");@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");@font-face {
+  font-family: "Helvetica Neue";
+  src: url("../../fonts/helvetica_neue/HelveticaNeue-Light.eot");
+  src: url("../../fonts/helvetica_neue/HelveticaNeue-Light-.eot#iefix") format("embedded-opentype"), url("../../fonts/helvetica_neue/HelveticaNeue-Light.woff2") format("woff2"), url("../../fonts/helvetica_neue/HelveticaNeue-Light.woff") format("woff"), url("../../fonts/helvetica_neue/HelveticaNeue-Light.ttf") format("truetype"), url("../../fonts/helvetica_neue/HelveticaNeue-Light.svg#HelveticaNeue-Light") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("../../fonts/helvetica_neue/HelveticaNeue-Medium.eot");
+  src: url("../../fonts/helvetica_neue/HelveticaNeue-Medium-.eot#iefix") format("embedded-opentype"), url("../../fonts/helvetica_neue/HelveticaNeue-Medium.woff2") format("woff2"), url("../../fonts/helvetica_neue/HelveticaNeue-Medium.woff") format("woff"), url("../../fonts/helvetica_neue/HelveticaNeue-Medium.ttf") format("truetype"), url("../../fonts/helvetica_neue/HelveticaNeue-Medium.svg#HelveticaNeue-Medium") format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("../../fonts/helvetica_neue/HelveticaNeue-Bold.eot");
+  src: url("../../fonts/helvetica_neue/HelveticaNeue-Bold-.eot#iefix") format("embedded-opentype"), url("../../fonts/helvetica_neue/HelveticaNeue-Bold.woff2") format("woff2"), url("../../fonts/helvetica_neue/HelveticaNeue-Bold.woff") format("woff"), url("../../fonts/helvetica_neue/HelveticaNeue-Bold.ttf") format("truetype"), url("../../fonts/helvetica_neue/HelveticaNeue-Bold.svg#HelveticaNeue-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+.contacto {
+  color: #FFF;
+}
+
+.contacto .bg-amarillo {
+  background-color: #3a8433;
+  background-position: center;
+  background-repeat: repeat;
+  background-blend-mode: multiply;
+  background-size: auto;
+  padding: 40px 0px;
+  position: relative;
+}
+
+.contacto .bg-amarillo::after {
+  content: "";
+  width: 100%;
+  height: 250px;
+  background-color: #000;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  z-index: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .contacto .bg-amarillo::after {
+    height: 350px;
+  }
+}
+
+.contacto .formulario h3 {
+  font-weight: bold;
+  letter-spacing: 0.11px;
+  color: #FFF;
+}
+
+@media screen and (min-width: 768px) {
+  .contacto .formulario h3 {
+    font-size: 35px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .contacto .formulario h3 {
+    font-size: 40px;
+  }
+}
+
+.contacto .formulario input {
+  width: 100%;
+  background-color: #fff;
+  border: none;
+  box-shadow: none !important;
+  outline: none !important;
+  font-family: "Roboto";
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  color: #adadad;
+  padding: 6px 15px;
+}
+
+.contacto .formulario input::-webkit-input-placeholder {
+  color: #adadad;
+}
+
+.contacto .formulario input::-moz-placeholder {
+  color: #adadad;
+}
+
+.contacto .formulario input:-ms-input-placeholder {
+  color: #adadad;
+}
+
+.contacto .formulario input::-ms-input-placeholder {
+  color: #adadad;
+}
+
+.contacto .formulario input::placeholder {
+  color: #adadad;
+}
+
+.contacto .formulario input + input {
+  margin-top: 15px;
+}
+
+.contacto .formulario textarea {
+  width: 100%;
+  background-color: #fff;
+  border: none;
+  box-shadow: none !important;
+  outline: none !important;
+  font-family: "Roboto";
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  color: #adadad;
+  padding: 6px 15px;
+  resize: none;
+}
+
+.contacto .formulario textarea::-webkit-input-placeholder {
+  color: #adadad;
+}
+
+.contacto .formulario textarea::-moz-placeholder {
+  color: #adadad;
+}
+
+.contacto .formulario textarea:-ms-input-placeholder {
+  color: #adadad;
+}
+
+.contacto .formulario textarea::-ms-input-placeholder {
+  color: #adadad;
+}
+
+.contacto .formulario textarea::placeholder {
+  color: #adadad;
+}
+
+.contacto .formulario p {
+  font-family: "Roboto";
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.contacto .formulario .btn {
+  padding: 7px 15px;
+  padding-bottom: 2px;
+  min-width: 136px;
+  width: 100%;
+  border-radius: 0px;
+  font-size: 16px;
+  font-family: "Teko";
+  font-weight: 700;
+  text-transform: uppercase;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.contacto .formulario .btn.btn-blanco {
+  border: 2px solid #fff;
+  background-color: transparent;
+  color: #fff;
+}
+
+.contacto .formulario .btn.btn-amarillo {
+  border: 2px solid #3a8433;
+  background-color: #3a8433;
+  color: #FFF;
+}
+
+.contacto .formulario .btn.btn-negro {
+  border: 2px solid #000;
+  background-color: #000;
+  color: #FFF;
+}
+
+@media screen and (min-width: 768px) {
+  .contacto .formulario .btn {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .contacto .formulario .btn {
+    font-size: 20px;
+  }
+}
+
+.contacto .mapa {
+  position: relative;
+  z-index: 1;
+}
+
+.contacto .mapa #mapa {
+  height: 300px;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .contacto .mapa #mapa {
+    height: 400px;
+  }
+}
+
+.contacto .instagram {
+  padding: 40px 0px;
+  background-color: #000;
+  color: #fff;
+}
+
+.contacto .instagram h3 {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 992px) {
+  .contacto .instagram h3 {
+    font-size: 48px;
+  }
+}
+
+.contacto .instagram span {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.63px;
+}
+
+@media screen and (min-width: 992px) {
+  .contacto .instagram span {
+    font-size: 32px;
+  }
+}
+
+.contacto .instagram ul {
+  list-style: none;
+  padding: 0px;
+}
+
+.contacto .instagram ul li {
+  font-size: 30px;
+}
+
+.contacto .instagram ul li + li {
+  margin-left: 20px;
+}
+
+.contacto .instagram .bg {
+  max-width: 252px;
+}
+
+.contacto .link-tienda-online {
+  overflow: hidden;
+  background-image: url("../../images/bg-link-tienda-online.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.contacto .link-tienda-online a {
+  font-family: "Oswald";
+  font-weight: 600;
+  line-height: 1.09;
+  color: #252525;
+  padding: 14px 0px;
+  font-size: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .contacto .link-tienda-online a {
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .contacto .link-tienda-online a {
+    padding: 20px 0px;
+  }
+}
+
+.contacto .link-tienda-online .trapecio-top {
+  position: relative;
+  z-index: 1;
+}
+
+.contacto .link-tienda-online .trapecio-top::before {
+  content: "";
+  width: 100%;
+  height: 0px;
+  border-right: 60px solid transparent;
+  border-left: 60px solid transparent;
+  border-top: 100px solid #3a8433;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+}
+
