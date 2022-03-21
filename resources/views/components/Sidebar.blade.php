@@ -49,6 +49,13 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link" href="{{URL::to('/panel/servicios-catalogo')}}">
+                    <i class="menu-icon mdi mdi-collage"></i>
+                    <span class="menu-title">Catálogo de servicios</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link" href="{{URL::to('configuracion')}}">
                     <i class="menu-icon mdi mdi-settings"></i>
                     <span class="menu-title">Configuración</span>

@@ -1,5 +1,8 @@
 <?php
 
 return [
-    'auth' => 'El correo o la contraseña son incorrectas.'
+    'auth' => 'El correo o la contraseña son incorrectas.',
+
+    'service_catalog_create' => 'Ocurrió un error al registrar el servicio.',
+    'service_catalog_update' => 'Ocurrió un error al editar el servicio.'
 ];

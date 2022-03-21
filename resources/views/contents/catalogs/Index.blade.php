@@ -1,4 +1,4 @@
-@section('title', 'Catalogos')
+@section('title', 'Catálogo de servicios')
 
 @section('stylesheets')
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" />
@@ -9,7 +9,7 @@
         <div class="col-md-6 col-md-offset-3">
         @if(Session::has('success_message'))
             <div class="alert alert-success col-md-12 col-sm-12 alert-dismissible fade show" role="alert">
-                <strong>{{ Session::get('success_title' )}}!</strong> {{ Session::get('success_message' )}}
+                {{ Session::get('success_message' )}}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -22,32 +22,35 @@
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Catalogos</h4>
-                    <p class="card-description">Lista de catalogos que serán mostrados en la web</p>
+                    <h4 class="card-title">Catálogo de servicios</h4>
+                    <p class="card-description">
+                        Lista de servicios que serán mostrados en la app
+                        <a href="/panel/servicios-catalogo/crear" class="btn btn-sm btn-primary float-right"><i class="menu-icon mdi mdi-plus-circle"></i>Crear</a>
+                    </p>
 
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    <th>Unidad</th>
                                     <th>Nombre</th>
-                                    <th>Marca</th>
-                                    <th>Categoria</th>
+                                    <th>Precio básico</th>
+                                    <th>Precio express</th>
                                     <th>Fecha modificación</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($lstCatalogs as $item)
+                                @foreach($lstServices as $item)
                                     <tr>
-                                        <td>{{ $item->id }}</td>
-                                        <td>{{ $item->name }}</td>
-                                        <td>@if(!is_null($item->brand)) {{$item->brand->name}} @endif</td>
-                                        <td>@if(!is_null($item->category)) {{$item->category->name}} @endif</td>
+                                        <td>{{ $item->unitType->name }}</td>
+                                        <td>{{ $item->name_es }}</td>
+                                        <td>${{ number_format($item->basic_price, 2)}}</td>
+                                        <td>${{ number_format($item->express_price, 2)}}</td>
                                         <td>{{ $item->updated_at }}</td>
                                         <td>
-                                            <a href="/panel/catalogos/catalogo-editar/{{ $item->id }}" class="btn btn-sm btn-warning">Editar</a>
-                                            <a href="/panel/catalogos/eliminar/{{ $item->id }}" class="btn btn-sm btn-danger">Eliminar</a>
+                                            <a href="/panel/servicios-catalogo/editar/{{ $item->id }}" class="btn btn-sm btn-warning">Editar</a>
+                                            <a href="/panel/servicios-catalogo/eliminar/{{ $item->id }}" class="btn btn-sm btn-danger">Eliminar</a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -85,10 +88,10 @@
     </script>
 @endsection
 
-@include('panel.components.Navbar')
-@include('panel.components.Sidebar')
-@include('panel.components.Footer')
-@include('panel.components.Scripts')
-@include('panel.components.Stylesheets')
+@include('components.Navbar')
+@include('components.Sidebar')
+@include('components.Footer')
+@include('components.Scripts')
+@include('components.Stylesheets')
 
-@extends('panel.components.Main')
+@extends('components.Main')
