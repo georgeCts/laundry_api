@@ -88,8 +88,8 @@ class AddMigration001 extends Migration
             $table->string('key');
             $table->text('description')->nullable();
             $table->string('value');
-            $table->timestamps();
             $table->boolean('active')->default(true);
+            $table->timestamps();
         });
     }
 

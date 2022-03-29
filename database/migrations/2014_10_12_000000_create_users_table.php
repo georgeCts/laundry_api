@@ -17,11 +17,14 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('last_name');
+            $table->string('phone_number', 25)->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('locale', 2);
-            $table->boolean('is_admin');
+            $table->boolean('is_admin')->default(false);
+            $table->boolean('is_guest')->default(false);
+            $table->string('device_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

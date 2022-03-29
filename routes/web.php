@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\PanelController;
+use App\Http\Controllers\Admin\ConfigurationsController;
 use App\Http\Controllers\Admin\ServicesCatalogController;
 
 /*
@@ -28,9 +29,12 @@ Route::prefix('panel')->middleware('panel.auth')->group(function() {
     Route::get('servicios-catalogo', [ServicesCatalogController::class, 'index']);
     Route::get('servicios-catalogo/crear', [ServicesCatalogController::class, 'create']);
     Route::post('servicios-catalogo/crear', [ServicesCatalogController::class, 'store'])->name('new-service-catalog');
-
     Route::get('servicios-catalogo/editar/{id}', [ServicesCatalogController::class, 'edit'])->name('panel.servicios-catalogo.editar');
     Route::put('servicios-catalogo/editar', [ServicesCatalogController::class, 'update'])->name('update-service-catalog');
-
     Route::get('servicios-catalogo/eliminar/{id}', [ServicesCatalogController::class, 'delete']);
+
+    //CONFIGURACIONES
+    Route::get('configuraciones', [ConfigurationsController::class, 'index']);
+    Route::get('configuraciones/editar/{id}', [ConfigurationsController::class, 'edit'])->name('panel.configuraciones.editar');
+    Route::put('configuraciones/editar', [ConfigurationsController::class, 'update'])->name('update-configuration');
 });

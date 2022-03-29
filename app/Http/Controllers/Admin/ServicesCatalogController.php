@@ -46,7 +46,7 @@ class ServicesCatalogController extends Controller
 
     public function update(ServiceCatalogUpdateRequest $request) {
         try {
-            ServiceCatalog::where('id', $request->hddIdServiceCatalog)->update($request->validated());
+            ServiceCatalog::where('id', $request->id)->update($request->validated());
             Session::flash('success_message', trans('messages.service_catalog_update'));
         } catch(Exception $ex) {
             dd($ex);

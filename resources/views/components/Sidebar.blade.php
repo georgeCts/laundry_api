@@ -56,7 +56,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{URL::to('configuracion')}}">
+                <a class="nav-link" href="{{URL::to('/panel/configuraciones')}}">
                     <i class="menu-icon mdi mdi-settings"></i>
                     <span class="menu-title">Configuración</span>
                 </a>
