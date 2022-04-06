@@ -91,6 +91,21 @@ class AddMigration001 extends Migration
             $table->boolean('active')->default(true);
             $table->timestamps();
         });
+
+        Schema::create('coupons', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->string('code', 6);
+            $table->float('discount', 4);
+            $table->boolean('special')->default(false);
+            $table->integer('quantity');
+            $table->timestamps();
+            $table->boolean('active')->default(true);
+
+            $table->foreign('user_id')->references('id')->on('users')
+                ->onDelete("cascade")
+                ->onUpdate("cascade");
+        });
     }
 
     /**
@@ -105,5 +120,6 @@ class AddMigration001 extends Migration
         Schema::dropIfExists('services_catalog');
         Schema::dropIfExists('unit_types');
         Schema::dropIfExists('configurations');
+        Schema::dropIfExists('coupons');
     }
 }

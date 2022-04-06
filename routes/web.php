@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\PanelController;
+use App\Http\Controllers\Admin\CouponsController;
 use App\Http\Controllers\Admin\ConfigurationsController;
 use App\Http\Controllers\Admin\ServicesCatalogController;
 
@@ -37,4 +38,7 @@ Route::prefix('panel')->middleware('panel.auth')->group(function() {
     Route::get('configuraciones', [ConfigurationsController::class, 'index']);
     Route::get('configuraciones/editar/{id}', [ConfigurationsController::class, 'edit'])->name('panel.configuraciones.editar');
     Route::put('configuraciones/editar', [ConfigurationsController::class, 'update'])->name('update-configuration');
+
+    //CUPONES
+    Route::get('cupones', [CouponsController::class, 'index']);
 });

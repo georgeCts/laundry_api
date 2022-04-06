@@ -35,6 +35,13 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link" href="{{URL::to('/panel/cupones')}}">
+                    <i class="menu-icon mdi mdi-gift"></i>
+                    <span class="menu-title">Cupones</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link" href="{{URL::to('servicios')}}">
                     <i class="menu-icon mdi mdi-basket"></i>
                     <span class="menu-title">Servicios</span>
