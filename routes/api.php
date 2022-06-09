@@ -26,6 +26,8 @@ Route::post('/auth/login/guest', [AuthController::class, 'loginAsGuest']);
 Route::middleware('auth:sanctum')->group(function () {
 
     // SERVICES
+    Route::get('services/{userId}', [ServicesController::class, 'getServices']);
+    Route::get('service/{id}', [ServicesController::class, 'getService']);
     Route::post('service', [ServicesController::class, 'store']);
 });
 

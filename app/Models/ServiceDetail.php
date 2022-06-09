@@ -9,6 +9,7 @@ class ServiceDetail extends Model
 {
     use HasFactory;
 
+    protected $table = 'services_details';
     /**
      * The attributes that are mass assignable.
      *
@@ -19,4 +20,10 @@ class ServiceDetail extends Model
         'service_catalog_id',
         'quantity'
     ];
+    public $timestamps = false;
+
+    public function serviceCatalog()
+    {
+        return $this->belongsTo(ServiceCatalog::class);
+    }
 }

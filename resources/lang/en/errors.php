@@ -9,5 +9,9 @@ return [
     'configurations_update' => 'An error occurred while updating the configuration.',
 
     // API ERRORS
-    'service_store' => 'An error ocurred while requesting the service.'
+    'service_get' => 'An error ocurred while getting your service information.',
+    'service_list' => 'An error ocurred while getting your services information.',
+    'service_store' => 'An error ocurred while requesting the service.',
+    'service_process' => 'An error ocurred while processing the service',
+    'service_catalog_length' => 'Please add one or more records in the service.',
 ];

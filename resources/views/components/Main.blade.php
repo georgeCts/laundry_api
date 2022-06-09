@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{{$_PAGE_TITLE}} | @yield('title', '*** TITLE ***')</title>
-    
+
     @yield('components.Stylesheets')
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -24,6 +24,7 @@
 
             <div class="main-panel">
                 <div class="content-wrapper">
+                    @yield('components.Alerts')
                     @yield('content', '*** CONTENT ***')
                 </div>
 

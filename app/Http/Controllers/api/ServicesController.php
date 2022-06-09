@@ -32,4 +32,24 @@ class ServicesController extends Controller
             return response()->json(['error_message' => trans('errors.service_store')], 403);
         }
     }
+
+    public function getService($id)
+    {
+        try {
+            $objService = Service::find($id);
+            return response()->json($objService);
+        } catch (Exception $ex) {
+            return response()->json(['error_message' => trans('errors. ')], 403);
+        }
+    }
+
+    public function getServices($userID)
+    {
+        try {
+            $services = Service::where('user_id', $userID)->orderBy('created_at', 'DESC')->get();
+            return response()->json($services);
+        } catch (Exception $ex) {
+            return response()->json(['error_message' => trans('errors.service_list')], 403);
+        }
+    }
 }

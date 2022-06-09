@@ -28,6 +28,23 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#module0" aria-expanded="false" aria-controls="module0">
+                    <i class="menu-icon mdi mdi-basket"></i>
+                    <span class="menu-title">Servicios</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="module0">
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{URL::to('panel/servicios/pendientes') }}">Pendientes</a>
+                            <a class="nav-link" href="{{URL::to('panel/servicios/aceptados') }}">Aceptados</a>
+                            <a class="nav-link" href="{{URL::to('panel/servicios/finalizados') }}">Finalizados</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link" href="{{URL::to('clientes')}}">
                     <i class="menu-icon mdi mdi-emoticon-excited"></i>
                     <span class="menu-title">Clientes</span>
@@ -38,13 +55,6 @@
                 <a class="nav-link" href="{{URL::to('/panel/cupones')}}">
                     <i class="menu-icon mdi mdi-gift"></i>
                     <span class="menu-title">Cupones</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="{{URL::to('servicios')}}">
-                    <i class="menu-icon mdi mdi-basket"></i>
-                    <span class="menu-title">Servicios</span>
                 </a>
             </li>
 

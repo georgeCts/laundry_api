@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\PanelController;
 use App\Http\Controllers\Admin\CouponsController;
 use App\Http\Controllers\Admin\ConfigurationsController;
 use App\Http\Controllers\Admin\ServicesCatalogController;
+use App\Http\Controllers\Admin\ServicesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,14 +18,23 @@ use App\Http\Controllers\Admin\ServicesCatalogController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/login-panel', [LoginController::class, 'index']);
 Route::post('/login-panel', [LoginController::class, 'access'])->name('login-panel');
 Route::get('/logout-panel', [LoginController::class, 'logout']);
 
-Route::prefix('panel')->middleware('panel.auth')->group(function() {
-    
+Route::prefix('panel')->middleware('panel.auth')->group(function () {
+
     //DASHBOARD
     Route::get('/', [PanelController::class, 'index']);
+
+    //SERVICIOS
+    Route::get('servicios/pendientes', [ServicesController::class, 'pendingList']);
+    Route::get('servicios/aceptados', [ServicesController::class, 'acceptedList']);
+    Route::get('servicios/finalizados', [ServicesController::class, 'finishedList']);
+    Route::get('servicios/procesar/{status}/{id}', [ServicesController::class, 'processService']);
+    Route::get('servicios/configurar/{id}', [ServicesController::class, 'configureService']);
+    Route::post('servicios/inicializar', [ServicesController::class, 'startService'])->name('start-service');
 
     //CATALOGOS SERVICIOS
     Route::get('servicios-catalogo', [ServicesCatalogController::class, 'index']);

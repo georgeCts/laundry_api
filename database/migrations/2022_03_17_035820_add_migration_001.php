@@ -50,15 +50,15 @@ class AddMigration001 extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->enum('status', ['PENDING', 'ACCEPTED', 'ON PROGRESS', 'FINISHED', 'CANCELED'])->default('PENDING');
+            $table->enum('status', ['PENDING', 'ACCEPTED', 'ON PROGRESS', 'FINISHED', 'CANCELLED'])->default('PENDING');
             $table->text('address');
             $table->text('reference');
             $table->boolean('express')->default(false);
             $table->dateTime('dt_request')->nullable();
             $table->dateTime('dt_start')->nullable();
             $table->dateTime('dt_finish')->nullable();
-            $table->dateTime('dt_canceled')->nullable();
-            $table->boolean('canceled')->default(false);
+            $table->dateTime('dt_cancelled')->nullable();
+            $table->boolean('cancelled')->default(false);
             $table->float('subtotal')->default(0);
             $table->float('tax')->default(0);
             $table->float('total')->default(0);

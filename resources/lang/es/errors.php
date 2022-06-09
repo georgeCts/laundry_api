@@ -9,5 +9,9 @@ return [
     'configurations_update' => 'Ocurrió un error al editar la configuración.',
 
     // API ERRORS
-    'service_store' => 'Ocurrió un error al procesar la solicitud del servicio.'
+    'service_get' => 'Ocurrió un error al obtener la información de tu servicio.',
+    'service_list' => 'Ocurrió un error al obtener la información de tus servicios.',
+    'service_store' => 'Ocurrió un error al procesar la solicitud del servicio.',
+    'service_process' => 'Ocurrió un error al procesar el servicio.',
+    'service_catalog_length' => 'Favor de agregar uno o más registros al servicio.',
 ];

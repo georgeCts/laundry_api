@@ -19,13 +19,20 @@ class Service extends Model
         'dt_request',
         'dt_start',
         'dt_finish',
-        'canceled',
+        'dt_cancelled',
+        'cancelled',
         'subtotal',
         'tax',
         'total'
     ];
 
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo(User::class);
+    }
+
+    public function details()
+    {
+        return $this->hasMany(ServiceDetail::class);
     }
 }

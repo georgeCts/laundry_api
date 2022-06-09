@@ -11,4 +11,7 @@ return [
 
     //API
     'service_store' => 'El servicio se ha creado exitosamente.',
+    'service_accepted' => 'El servicio ha sido aceptado.',
+    'service_on_progress' => 'El servicio ha sido iniciado',
+    'service_cancelled' => 'El servicio ha sido cancelado.',
 ];
