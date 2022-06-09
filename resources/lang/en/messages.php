@@ -8,4 +8,7 @@ return [
     'service_catalog_delete' => 'The service has been successfully deleted.',
 
     'configurations_update' => 'The configuration has been successfully modified',
+
+    // API
+    'service_store' => 'The service has been successfully created.',
 ];

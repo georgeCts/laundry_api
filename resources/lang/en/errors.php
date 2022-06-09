@@ -6,5 +6,8 @@ return [
     'service_catalog_create' => 'An error occurred while registering the service.',
     'service_catalog_update' => 'An error occurred while updating the service.',
 
-    'configurations_update' => 'An error occurred while updating the configuration.'
+    'configurations_update' => 'An error occurred while updating the configuration.',
+
+    // API ERRORS
+    'service_store' => 'An error ocurred while requesting the service.'
 ];

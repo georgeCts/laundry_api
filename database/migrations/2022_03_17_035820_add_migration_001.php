@@ -20,7 +20,7 @@ class AddMigration001 extends Migration
             $table->text('address');
             $table->text('reference');
             $table->timestamps();
- 
+
             $table->foreign('user_id')->references('id')->on('users');
         }); */
 
@@ -59,9 +59,9 @@ class AddMigration001 extends Migration
             $table->dateTime('dt_finish')->nullable();
             $table->dateTime('dt_canceled')->nullable();
             $table->boolean('canceled')->default(false);
-            $table->float('subtotal');
-            $table->float('tax');
-            $table->float('total');
+            $table->float('subtotal')->default(0);
+            $table->float('tax')->default(0);
+            $table->float('total')->default(0);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')
