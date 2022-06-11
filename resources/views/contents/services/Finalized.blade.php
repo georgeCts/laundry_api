@@ -9,8 +9,8 @@
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Servicios Aceptados y En Progreso</h4>
-                    <p class="card-description">Lista de servicios que se encuentran aceptados y en progreso</p>
+                    <h4 class="card-title">Servicios Finalizados y Cancelados</h4>
+                    <p class="card-description">Lista de servicios que se encuentran finalizados y cancelados</p>
 
                     <div class="table-responsive">
                         <table class="table table-striped">
@@ -18,8 +18,10 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Cliente</th>
-                                    <th>Tipo</th>
+                                    <th>Direcci&oacute;n</th>
+                                    <th>Referencias</th>
                                     <th>Estatus</th>
+                                    <th>Total</th>
                                     <th>Fecha/Hora</th>
                                     <th>Acciones</th>
                                 </tr>
@@ -35,35 +37,41 @@
                                                 {{$item->user->name}} {{$item->user->last_name}}
                                             @endif
                                         </td>
+                                        <td>{{ $item->address }}</td>
+                                        <td>{{ $item->reference }}</td>
                                         <td>
-                                            @if($item->express)
-                                                <label class="badge badge-dark">Express</label>
-                                            @else
-                                                <label class="badge badge-ligh">Normal</label>
-                                            @endif
-                                        </td>
-                                        <td>
-                                            @if($item->status == "ACCEPTED")
-                                                <label class="badge badge-success">Aceptado</label>
-                                            @else
-                                                <label class="badge badge-warning">En progreso</label>
-                                            @endif
-                                        </td>
-                                        <td>
-                                            @if($item->status == "ACCEPTED")
-                                                Solicitud: {{ $item->created_at }}
-                                            @else
-                                                Finalizaci&oacute;n: <strong>{{ $item->dt_end }}</strong>
-                                            @endif
-                                        </td>
-                                        <td>
-                                            @if($item->status == "ACCEPTED")
-                                                <a href="/panel/servicios/configurar/{{ $item->id }}" class="btn btn-sm btn-dark">Configurar solicitud</a>
-                                            @else
-                                                <a href="/panel/servicios/procesar/{{ $item->id }}/FINISHED" class="btn btn-sm btn-light">Finalizar servicio</a>
+                                            @if($item->status == "FINISHED" && $item->delivered)
+                                                <label class="badge badge-success">Finalizado</label>
                                             @endif
 
-                                            <a href="/panel/servicios/procesar/{{ $item->id }}/CANCELLED" class="btn btn-sm btn-danger">Cancelar</a>
+                                            @if($item->status == "FINISHED" && !$item->delivered)
+                                                <label class="badge badge-warning">Falta entregar</label>
+                                            @endif
+
+                                            @if($item->cancelled)
+                                                <label class="badge badge-danger">Cancelado</label>
+                                            @endif
+                                        </td>
+                                        <td>${{ number_format($item->total, 2) }}</td>
+                                        <td>
+                                            @if($item->status == "FINISHED" && $item->delivered)
+                                                Conclu&iacute;o: <strong>{{ $item->dt_finish }}</strong>
+                                            @endif
+
+                                            @if($item->status == "FINISHED" && !$item->delivered)
+                                                -
+                                            @endif
+
+                                            @if($item->cancelled)
+                                             Cancelado: <strong>{{ $item->dt_cancelled }}</strong>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if($item->status == "FINISHED" && !$item->delivered)
+                                                <a href="/panel/servicios/procesar/{{ $item->id }}/FINISHED" class="btn btn-sm btn-success">Entregar servicio</a>
+                                            @else
+                                                -
+                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach

@@ -56,9 +56,12 @@ class AddMigration001 extends Migration
             $table->boolean('express')->default(false);
             $table->dateTime('dt_request')->nullable();
             $table->dateTime('dt_start')->nullable();
-            $table->dateTime('dt_finish')->nullable();
+            $table->dateTime('dt_end')->nullable();
+            $table->dateTime('dt_finalized')->nullable();
             $table->dateTime('dt_cancelled')->nullable();
             $table->boolean('cancelled')->default(false);
+            $table->boolean('delivered')->default(false);
+            $table->boolean('use_dollars')->default(false);
             $table->float('subtotal')->default(0);
             $table->float('tax')->default(0);
             $table->float('total')->default(0);

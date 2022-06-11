@@ -20,7 +20,7 @@
                                     <th>Cliente</th>
                                     <th>Tipo</th>
                                     <th>Dirección</th>
-                                    <th>Fecha/Hora</th>
+                                    <th>Fecha/Hora Solicitud</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
@@ -39,10 +39,10 @@
                                             @if($item->express)
                                                 <label class="badge badge-dark">Express</label>
                                             @else
-                                                <label class="badge badge-light">Normal</label>
+                                                <label class="badge badge-info">Normal</label>
                                             @endif
                                         </td>
-                                        <td>{{ $item->address }}</td>
+                                        <td>{{ $item->created_at }}</td>
                                         <td>{{ $item->updated_at }}</td>
                                         <td>
                                             <a href="/panel/servicios/procesar/{{ $item->id }}/ACCEPTED" class="btn btn-sm btn-success">Aceptar</a>

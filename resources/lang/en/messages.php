@@ -13,5 +13,7 @@ return [
     'service_store' => 'The service has been successfully created.',
     'service_accepted' => 'The service has been accepted.',
     'service_on_progress' => 'The service has started.',
+    'service_pending_delivery' => 'The service has ended but the delivery is pending.',
+    'service_completed' => 'The service has been completed.',
     'service_cancelled' => 'The service has been cancelled.',
 ];

@@ -18,9 +18,12 @@ class Service extends Model
         'express',
         'dt_request',
         'dt_start',
-        'dt_finish',
+        'dt_end',
+        'dt_finalized',
         'dt_cancelled',
         'cancelled',
+        'delivered',
+        'use_dollars',
         'subtotal',
         'tax',
         'total'

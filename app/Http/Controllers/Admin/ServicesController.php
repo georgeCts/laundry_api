@@ -29,8 +29,8 @@ class ServicesController extends Controller
 
     public function finishedList()
     {
-        $lstServices = Service::where('active', true)->orderBy('name_es', 'ASC')->get();
-        return view('contents.services.Index', ['lstServices' => $lstServices]);
+        $lstServices = Service::where('status', 'FINISHED')->orWhere('status', 'CANCELLED')->orderBy('created_at', 'ASC')->get();
+        return view('contents.services.Finalized', ['lstServices' => $lstServices]);
     }
 
     public function processService($serviceId, $serviceStatus)
@@ -49,6 +49,28 @@ class ServicesController extends Controller
                     return redirect('panel/servicios/aceptados');
                 }
 
+                if ($serviceStatus == 'FINISHED' && $objService->status == 'ON PROGRESS') {
+                    $objService->status = 'FINISHED';
+                    $objService->dt_end = now();
+                    $objService->save();
+
+                    // Notificacion al usuario APP
+
+                    Session::flash('success_message', trans('messages.service_pending_delivery'));
+                    return redirect('panel/servicios/finalizados');
+                }
+
+                if ($serviceStatus == 'FINISHED' && $objService->status == 'FINISHED') {
+                    $objService->dt_finish = now();
+                    $objService->delivered = true;
+                    $objService->save();
+
+                    // Notificacion al usuario APP
+
+                    Session::flash('success_message', trans('messages.service_completed'));
+                    return Redirect::back();
+                }
+
                 if ($serviceStatus == 'CANCELLED' && !$objService->cancelled) {
                     $objService->cancelled = true;
                     $objService->dt_cancelled = now();
@@ -57,6 +79,7 @@ class ServicesController extends Controller
                     // Notificacion al usuario APP
 
                     Session::flash('success_message', trans('messages.service_cancelled'));
+                    return redirect('panel/servicios/finalizados');
                 }
             }
 
@@ -70,9 +93,11 @@ class ServicesController extends Controller
     {
         $objService = Service::find($serviceId);
 
-        if (!is_null($objService) && $objService->status == "ACCEPTED") {
-            $lstServices = ServiceCatalog::with('unitType:id,name')->where('active', true)->orderBy('name_es', 'ASC')->get();
-            return view('contents.services.Start', ['lstServices' => $lstServices, 'objService' => $objService]);
+        if (!is_null($objService)) {
+            if ($objService->status == "ACCEPTED") {
+                $lstServices = ServiceCatalog::with('unitType:id,name')->where('active', true)->orderBy('name_es', 'ASC')->get();
+                return view('contents.services.Start', ['lstServices' => $lstServices, 'objService' => $objService]);
+            }
         }
 
         return Redirect::back()->withErrors(['error_message' => trans('errors.service_process')]);
@@ -80,6 +105,7 @@ class ServicesController extends Controller
 
     public function startService(Request $request)
     {
+
         try {
             DB::beginTransaction();
             $objService = Service::find($request->serviceId);
@@ -89,8 +115,13 @@ class ServicesController extends Controller
 
             if ($objService->status == 'ACCEPTED') {
                 if (sizeof($request->catalog) > 0 && sizeof($request->quantity) > 0) {
+                    $dateHour = explode(",", $request->dateHourFinalized);
+                    $dateFinalized = explode("/", $dateHour[0]);
+                    $hourFinalized = trim($dateHour[1]) . ":00";
+
                     $objService->status = 'ON PROGRESS';
                     $objService->dt_start = now();
+                    $objService->dt_end = "{$dateFinalized[2]}-{$dateFinalized[1]}-{$dateFinalized[0]} {$hourFinalized}";
                     $objService->save();
 
                     foreach ($request->catalog as $key => $value) {
