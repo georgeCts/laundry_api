@@ -28,7 +28,6 @@ class ServicesController extends Controller
 
             return response()->json(['success_message' => trans('messages.service_store')]);
         } catch (Exception $ex) {
-            dd($ex);
             return response()->json(['error_message' => trans('errors.service_store')], 403);
         }
     }
@@ -46,7 +45,7 @@ class ServicesController extends Controller
     public function getServices($userID)
     {
         try {
-            $services = Service::where('user_id', $userID)->orderBy('created_at', 'DESC')->get();
+            $services = Service::with(['details', 'details.serviceCatalog', 'details.serviceCatalog.unitType'])->where('user_id', $userID)->orderBy('created_at', 'DESC')->get();
             return response()->json($services);
         } catch (Exception $ex) {
             return response()->json(['error_message' => trans('errors.service_list')], 403);
