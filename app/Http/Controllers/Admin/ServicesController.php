@@ -125,11 +125,18 @@ class ServicesController extends Controller
                     $objService->save();
 
                     foreach ($request->catalog as $key => $value) {
+                        $objServiceCatalog = ServiceCatalog::find($value);
+                        $catalogValue = $objService->express ? $objServiceCatalog->express_price : $objServiceCatalog->basic_price;
+                        $total = $catalogValue * (float)$request->quantity[$key];
+
                         $detail = new ServiceDetail();
                         $detail->service_id = $request->serviceId;
                         $detail->service_catalog_id = $value;
                         $detail->quantity = $request->quantity[$key];
+                        $detail->total = $total;
                         $detail->save();
+
+                        $subtotal = $subtotal + $detail->total;
                     }
 
                     foreach ($objService->details as $detail) {

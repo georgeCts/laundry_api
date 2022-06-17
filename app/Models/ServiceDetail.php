@@ -18,7 +18,8 @@ class ServiceDetail extends Model
     protected $fillable = [
         'service_id',
         'service_catalog_id',
-        'quantity'
+        'quantity',
+        'total'
     ];
     public $timestamps = false;
 

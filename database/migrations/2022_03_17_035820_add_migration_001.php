@@ -76,7 +76,8 @@ class AddMigration001 extends Migration
             $table->id();
             $table->unsignedBigInteger('service_id')->nullable();
             $table->unsignedBigInteger('service_catalog_id')->nullable();
-            $table->float('quantity');
+            $table->float('quantity')->default(0);
+            $table->float('total')->default(0);
 
             $table->foreign('service_id')->references('id')->on('services')
                 ->onDelete("cascade")
