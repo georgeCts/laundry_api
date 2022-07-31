@@ -16,4 +16,7 @@ return [
     'service_pending_delivery' => 'El servicio ha terminado pero la entrega está pendiente.',
     'service_completed' => 'El servicio ha sido acompletado.',
     'service_cancelled' => 'El servicio ha sido cancelado.',
+
+    // Notifications APP
+    'notification_service_accepted' => '¡Tu servicio ha sido aceptado!'
 ];

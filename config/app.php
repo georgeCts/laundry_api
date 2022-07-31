@@ -166,6 +166,7 @@ return [
         /*
          * Package Service Providers...
          */
+        NotificationChannels\ExpoPushNotifications\ExpoPushNotificationsServiceProvider::class,
 
         /*
          * Application Service Providers...

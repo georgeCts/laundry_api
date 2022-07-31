@@ -8,10 +8,12 @@ use Illuminate\Http\Request;
 use App\Models\Configuration;
 use App\Models\ServiceDetail;
 use App\Models\ServiceCatalog;
+use App\Services\ExpoNotification;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
+use App\Notifications\StatusUpdateNotification;
 
 class ServicesController extends Controller
 {
@@ -44,6 +46,8 @@ class ServicesController extends Controller
                     $objService->save();
 
                     // Notificacion al usuario APP
+                    $message = trans('messages.notification_service_accepted', [], $objService->user->locale);
+                    (new ExpoNotification($objService->user->device_id, $message))->send();
 
                     Session::flash('success_message', trans('messages.service_accepted'));
                     return redirect('panel/servicios/aceptados');
@@ -55,6 +59,7 @@ class ServicesController extends Controller
                     $objService->save();
 
                     // Notificacion al usuario APP
+                    //$objService->user->notify(new StatusUpdateNotification("sdfd"));
 
                     Session::flash('success_message', trans('messages.service_pending_delivery'));
                     return redirect('panel/servicios/finalizados');
@@ -72,6 +77,7 @@ class ServicesController extends Controller
                 }
 
                 if ($serviceStatus == 'CANCELLED' && !$objService->cancelled) {
+                    $objService->status = 'CANCELLED';
                     $objService->cancelled = true;
                     $objService->dt_cancelled = now();
                     $objService->save();
