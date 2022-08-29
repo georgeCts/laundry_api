@@ -19,6 +19,10 @@ use App\Http\Controllers\Admin\ServicesController;
 |
 */
 
+Route::get('/', function () {
+    return view('Index');
+});
+
 Route::get('/login-panel', [LoginController::class, 'index']);
 Route::post('/login-panel', [LoginController::class, 'access'])->name('login-panel');
 Route::get('/logout-panel', [LoginController::class, 'logout']);
