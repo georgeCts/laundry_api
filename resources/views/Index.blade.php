@@ -41,7 +41,7 @@
                 <div class="container-mid">
                     <!-- ANIMATION CONTAINER -->
                     <div class="animation-container animation-fade-down" data-animation-delay="0">
-                        <img class="img-responsive logo" src="assets/img/logo.png" alt="image">
+                        <img class="img-responsive logo" src="{{ asset('web/assets/img/logo.png') }}" alt="image">
                     </div>
                     <!-- /ANIMATION CONTAINER -->
 
