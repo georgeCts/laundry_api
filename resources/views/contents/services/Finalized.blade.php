@@ -55,7 +55,7 @@
                                         <td>${{ number_format($item->total, 2) }}</td>
                                         <td>
                                             @if($item->status == "FINISHED" && $item->delivered)
-                                                Conclu&iacute;o: <strong>{{ $item->dt_finish }}</strong>
+                                                Concluy&oacute;: <strong>{{ $item->dt_finalized }}</strong>
                                             @endif
 
                                             @if($item->status == "FINISHED" && !$item->delivered)
