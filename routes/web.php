@@ -36,7 +36,7 @@ Route::prefix('panel')->middleware('panel.auth')->group(function () {
     Route::get('servicios/pendientes', [ServicesController::class, 'pendingList']);
     Route::get('servicios/aceptados', [ServicesController::class, 'acceptedList']);
     Route::get('servicios/finalizados', [ServicesController::class, 'finishedList']);
-    Route::get('servicios/procesar/{status}/{id}', [ServicesController::class, 'processService']);
+    Route::get('servicios/procesar/{id}/{status}', [ServicesController::class, 'processService']);
     Route::get('servicios/configurar/{id}', [ServicesController::class, 'configureService']);
     Route::post('servicios/inicializar', [ServicesController::class, 'startService'])->name('start-service');
 

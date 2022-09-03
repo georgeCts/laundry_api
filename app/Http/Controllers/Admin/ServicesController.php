@@ -59,18 +59,21 @@ class ServicesController extends Controller
                     $objService->save();
 
                     // Notificacion al usuario APP
-                    //$objService->user->notify(new StatusUpdateNotification("sdfd"));
+                    $message = trans('messages.notification_service_finalized', [], $objService->user->locale);
+                    (new ExpoNotification($objService->user->device_id, $message))->send();
 
                     Session::flash('success_message', trans('messages.service_pending_delivery'));
                     return redirect('panel/servicios/finalizados');
                 }
 
                 if ($serviceStatus == 'FINISHED' && $objService->status == 'FINISHED') {
-                    $objService->dt_finish = now();
+                    $objService->dt_finalized = now();
                     $objService->delivered = true;
                     $objService->save();
 
                     // Notificacion al usuario APP
+                    $message = trans('messages.notification_service_delivered', [], $objService->user->locale);
+                    (new ExpoNotification($objService->user->device_id, $message))->send();
 
                     Session::flash('success_message', trans('messages.service_completed'));
                     return Redirect::back();
@@ -83,6 +86,8 @@ class ServicesController extends Controller
                     $objService->save();
 
                     // Notificacion al usuario APP
+                    $message = trans('messages.notification_service_cancelled', [], $objService->user->locale);
+                    (new ExpoNotification($objService->user->device_id, $message))->send();
 
                     Session::flash('success_message', trans('messages.service_cancelled'));
                     return redirect('panel/servicios/finalizados');
@@ -102,6 +107,7 @@ class ServicesController extends Controller
         if (!is_null($objService)) {
             if ($objService->status == "ACCEPTED") {
                 $lstServices = ServiceCatalog::with('unitType:id,name')->where('active', true)->orderBy('name_es', 'ASC')->get();
+
                 return view('contents.services.Start', ['lstServices' => $lstServices, 'objService' => $objService]);
             }
         }
@@ -142,7 +148,7 @@ class ServicesController extends Controller
                         $detail->total = $total;
                         $detail->save();
 
-                        $subtotal = $subtotal + $detail->total;
+                        $subtotal = $subtotal + $total;
                     }
 
                     foreach ($objService->details as $detail) {
@@ -163,6 +169,8 @@ class ServicesController extends Controller
                     $objService->save();
 
                     // Notificacion al usuario APP
+                    $message = trans('messages.notification_service_finalized', [], $objService->user->locale);
+                    (new ExpoNotification($objService->user->device_id, $message))->send();
 
                     DB::commit();
                     Session::flash('success_message', trans('messages.service_on_progress'));
