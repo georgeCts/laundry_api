@@ -151,11 +151,6 @@ class ServicesController extends Controller
                         $subtotal = $subtotal + $total;
                     }
 
-                    foreach ($objService->details as $detail) {
-                        $catalogValue = $objService->express ? $detail->serviceCatalog->express_price : $detail->serviceCatalog->basic_price;
-                        $subtotal = $subtotal + ($catalogValue * $detail->quantity);
-                    }
-
                     $objConfigTax = Configuration::where('key', 'IVA')->first();
                     $objConfigService = Configuration::where('key', 'SERVICIO_DOMICILIO')->first();
                     $taxPercentage = (float)$objConfigTax->value / 100;
