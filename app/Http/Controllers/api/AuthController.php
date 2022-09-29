@@ -26,6 +26,10 @@ class AuthController extends Controller
                 $objUser->is_guest = true;
                 $objUser->device_id = $request->device_id;
                 $objUser->save();
+
+                // Update name with the ID of the record.
+                $objUser->name = "Guest#" . $objUser->id;
+                $objUser->save();
             }
 
             $response = (object)[
