@@ -21,5 +21,6 @@ return [
     'notification_service_accepted' => '¡Tu servicio ha sido aceptado!',
     'notification_service_on_progress' => '¡Tu servicio ha sido iniciado!',
     'notification_service_finalized' => '¡Tu servicio está listo para ser entregado!',
-    'notification_service_delivered' => '¡Tu servicio ha sido entregado!'
+    'notification_service_delivered' => '¡Tu servicio ha sido entregado!',
+    'notification_service_cancelled' => '¡Tu servicio ha sido cancelado!'
 ];
