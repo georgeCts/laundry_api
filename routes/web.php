@@ -23,6 +23,14 @@ Route::get('/', function () {
     return view('Index');
 });
 
+Route::get('/aviso-privacidad', function () {
+    return view('AvisoPrivacidad');
+});
+
+Route::get('/terminos-condiciones', function () {
+    return view('TerminosCondiciones');
+});
+
 Route::get('/login-panel', [LoginController::class, 'index']);
 Route::post('/login-panel', [LoginController::class, 'access'])->name('login-panel');
 Route::get('/logout-panel', [LoginController::class, 'logout']);
