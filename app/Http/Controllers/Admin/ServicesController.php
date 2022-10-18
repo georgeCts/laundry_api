@@ -126,8 +126,8 @@ class ServicesController extends Controller
             $total = 0;
 
             if ($objService->status == 'ACCEPTED') {
-                if (sizeof($request->catalog) > 0 && sizeof($request->quantity) > 0) {
-                    $dateHour = explode(",", $request->dateHourFinalized);
+                if (isset($request->catalog) && sizeof($request->catalog) > 0 && sizeof($request->quantity) > 0) {
+                    $dateHour = explode(" ", $request->dateHourFinalized);
                     $dateFinalized = explode("/", $dateHour[0]);
                     $hourFinalized = trim($dateHour[1]) . ":00";
 

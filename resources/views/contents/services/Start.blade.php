@@ -88,10 +88,16 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" crossorigin="anonymous"></script>
 <!-- Tempus Dominus JavaScript -->
 <script src="https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@master/dist/js/tempus-dominus.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@master/dist/plugins/customDateFormat.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@master/dist/js/jQuery-provider.js"></script>
 <script type="text/javascript">
-    $(document).ready(function(){
-        $('#datetimepicker').tempusDominus({
+    $(document).ready(function() {
+        tempusDominus.extend(window.tempusDominus.plugins.customDateFormat);
+        const datetimepicker = new tempusDominus.TempusDominus(document.getElementById('datetimepicker'), {
+            localization: {
+                locale: 'es',
+                format: 'dd/MM/yyyy HH:mm'
+            },
             restrictions: {
                 minDate: new Date(),
             },
@@ -110,6 +116,29 @@
                 },
             },
         });
+        /* $('#datetimepicker').tempusDominus({
+            localization: {
+                locale: 'es',
+                format: 'dd/MM/yyyy HH:mm'
+            },
+            restrictions: {
+                minDate: new Date(),
+            },
+            display: {
+                icons: {
+                    type: 'icons',
+                    date: 'mdi mdi-calendar',
+                    time: 'mdi mdi-clock',
+                    up: 'mdi mdi-chevron-up',
+                    down: 'mdi mdi-chevron-down',
+                    previous: 'mdi mdi-arrow-left',
+                    next: 'mdi mdi-arrow-right',
+                },
+                components: {
+                    useTwentyfourHour: true
+                },
+            },
+        }); */
 
         $('.addRow').on('click', function () {
             var serviceId = $("#service_catalog option:selected").val();
