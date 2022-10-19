@@ -164,7 +164,7 @@ class ServicesController extends Controller
                     $objService->save();
 
                     // Notificacion al usuario APP
-                    $message = trans('messages.notification_service_on_progress', [], $objService->user->locale);
+                    $message = trans('messages.notification_service_on_progress', ['total' => number_format($total, 2)], $objService->user->locale);
                     (new ExpoNotification($objService->user->device_id, $message))->send();
 
                     DB::commit();

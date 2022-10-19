@@ -116,29 +116,6 @@
                 },
             },
         });
-        /* $('#datetimepicker').tempusDominus({
-            localization: {
-                locale: 'es',
-                format: 'dd/MM/yyyy HH:mm'
-            },
-            restrictions: {
-                minDate: new Date(),
-            },
-            display: {
-                icons: {
-                    type: 'icons',
-                    date: 'mdi mdi-calendar',
-                    time: 'mdi mdi-clock',
-                    up: 'mdi mdi-chevron-up',
-                    down: 'mdi mdi-chevron-down',
-                    previous: 'mdi mdi-arrow-left',
-                    next: 'mdi mdi-arrow-right',
-                },
-                components: {
-                    useTwentyfourHour: true
-                },
-            },
-        }); */
 
         $('.addRow').on('click', function () {
             var serviceId = $("#service_catalog option:selected").val();

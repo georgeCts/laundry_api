@@ -19,7 +19,7 @@ return [
 
     // Notifications APP
     'notification_service_accepted' => 'Your service has been accepted!',
-    'notification_service_on_progress' => 'Your service is in progress!',
+    'notification_service_on_progress' => 'Your service is in progress! The total of your service is $:total',
     'notification_service_finalized' => 'Your service is ready to be delivered!',
     'notification_service_delivered' => 'Your service has been delivered!',
     'notification_service_cancelled' => 'Your service has been cancelled!',
