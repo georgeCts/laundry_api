@@ -8,6 +8,7 @@ use App\Models\Service;
 use App\Services\Utils;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Events\RealTimeMessage;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,6 +29,8 @@ class ServicesController extends Controller
                 $objService->tax = 0;
                 $objService->total = 0;
                 $objService->save();
+
+                event(new RealTimeMessage('Hello World'));
             } else {
                 return response()->json(['error_message' => trans('errors.service_store__business_hours')], 403);
             }
