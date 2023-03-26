@@ -28,5 +28,5 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
      wsPort: 6001,
      wssPort: 6001,
      disableStats: false,
-     enabledTransports: ['ws', 'wss']
+     forceTLS: true
  });
