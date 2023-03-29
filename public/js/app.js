@@ -2095,12 +2095,13 @@ window.Pusher = __webpack_require__(/*! pusher-js */ "./node_modules/pusher-js/d
 window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   broadcaster: 'pusher',
   key: "12345",
-  cluster: "mt1",
+  //cluster: process.env.MIX_PUSHER_APP_CLUSTER,
   wsHost: window.location.hostname,
   wsPort: 6001,
   wssPort: 6001,
-  disableStats: false,
-  forceTLS: true
+  disableStats: true,
+  forceTLS: true,
+  enableTransports: ['ws', 'wss']
 });
 
 /***/ }),
