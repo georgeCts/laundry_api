@@ -2100,7 +2100,6 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   wsPort: 6001,
   wssPort: 6001,
   disableStats: true,
-  forceTLS: true,
   enableTransports: ['ws', 'wss']
 });
 var permission = Notification.permission;
