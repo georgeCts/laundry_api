@@ -2103,6 +2103,34 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   forceTLS: true,
   enableTransports: ['ws', 'wss']
 });
+var permission = Notification.permission;
+laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"].channel('events').listen('RealTimeMessage', function (e) {
+  if (permission === "granted") {
+    showNotification();
+  } else if (permission === "default") {
+    requestAndShowPermission();
+  } else {
+    alert("Use normal alert");
+  }
+});
+function requestAndShowPermission() {
+  Notification.requestPermission(function (permission) {
+    if (permission === "granted") {
+      showNotification();
+    }
+  });
+}
+function showNotification() {
+  var title = "Nuevo servicio";
+  var body = "Se ha solicitado un servicio de lavandería";
+  var notification = new Notification(title, {
+    body: body
+  });
+  notification.onclick = function () {
+    notification.close();
+    window.parent.focus();
+  };
+}
 
 /***/ }),
 

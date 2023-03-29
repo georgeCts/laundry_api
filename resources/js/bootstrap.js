@@ -31,3 +31,35 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
      forceTLS: true,
      enableTransports: ['ws', 'wss']
  });
+
+ let permission = Notification.permission;
+
+Echo.channel('events')
+    .listen('RealTimeMessage', (e) => {
+        if(permission === "granted"){
+            showNotification();
+        } else if(permission === "default"){
+            requestAndShowPermission();
+        } else {
+            alert("Use normal alert");
+        }
+    });
+
+function requestAndShowPermission() {
+    Notification.requestPermission(function (permission) {
+        if (permission === "granted") {
+            showNotification();
+        }
+    });
+}
+function showNotification() {
+    let title = "Nuevo servicio";
+    let body = "Se ha solicitado un servicio de lavandería";
+
+    let notification = new Notification(title, { body });
+
+    notification.onclick = () => {
+            notification.close();
+            window.parent.focus();
+    }
+}
