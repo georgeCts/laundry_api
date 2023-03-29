@@ -34,7 +34,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
  let permission = Notification.permission;
 
-Echo.channel('events')
+window.Echo.channel('events')
     .listen('RealTimeMessage', (e) => {
         if(permission === "granted"){
             showNotification();

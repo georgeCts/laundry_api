@@ -2104,7 +2104,7 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   enableTransports: ['ws', 'wss']
 });
 var permission = Notification.permission;
-laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"].channel('events').listen('RealTimeMessage', function (e) {
+window.Echo.channel('events').listen('RealTimeMessage', function (e) {
   if (permission === "granted") {
     showNotification();
   } else if (permission === "default") {
