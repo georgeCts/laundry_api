@@ -18,7 +18,7 @@ class ServicesController extends Controller
     public function store(Request $request)
     {
         try {
-            if (Utils::isBusinessHours()) {
+            if (Utils::isBusinessHours() || env('APP_DEBUG') == true) {
                 $objService = new Service();
                 $objService->user_id = $request->user_id;
                 $objService->address = $request->address;
